@@ -1,3 +1,5 @@
+<img src="images/prints/gif-rockets.gif">
+
 <img src="images/prints/01.png">
 <img src="images/prints/02.png">
 <img src="images/prints/03.png">
