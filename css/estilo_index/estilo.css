@@ -1,0 +1,596 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	background: #444;
+	color: #fff;
+	font-family: Arial;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas: "menu" "primeiro-grid" "segundo-grid";
+}
+
+.menu {
+	grid-column: menu;
+	background: linear-gradient(to right, #111, #333);
+	border-bottom: 2px solid #000;
+	animation: showMenu .5s forwards;
+}
+
+.menu a {
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-decoration: none;
+	color: #ddd;
+	font-size: 0.85rem;
+	letter-spacing: 2px;
+}
+
+.menu.ativado {
+	padding: 100px;
+	-webkit-transition: all 0.75s ease 0s;
+	-moz-transition: all 0.75s ease 0s;
+	-o-transition: all 0.75s ease 0s;
+	transition: all 0.75s ease 0s;
+}
+
+.menu.desativado {
+	padding: 10px;
+	background: linear-gradient(to right, #111, #333);
+	-webkit-transition: all 0.75s ease 0s;
+	-moz-transition: all 0.75s ease 0s;
+	-o-transition: all 0.75s ease 0s;
+	transition: all 0.75s ease 0s;
+}
+
+/* Mudar o TOP do SVG-WHATS só no Mozilla */
+@-moz-document url-prefix() {
+    body .svg-whats {
+        top: 560px;
+    }
+}
+
+.svg-whats {
+	top: 590px;
+	z-index: 2;
+	position: fixed;
+	width: 50px;
+	animation: showWhats .5s ease-in 0s infinite alternate;
+}
+
+.primeiro-grid {
+	grid-column: primeiro-grid;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: "imagens-esquerda imagem-grande-direita";
+	padding-top: 40px;
+}
+
+.segundo-grid {
+	grid-column: segundo-grid;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: "imagem-grande-esquerda imagens-direita";
+	padding-top: 50px;
+}
+
+.imagens-esquerda {
+	grid-column: imagens-esquerda;
+	padding-top: 80px;
+}
+
+.imagens-direita {
+	grid-column: imagens-direita;
+}
+
+.imagem-grande-direita {
+	grid-column: imagem-grande-direita;
+	background: url("../../images/corte1.jpg")center center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	box-shadow: 2px 2px 2px 15px #000;
+	margin-top: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.imagem-grande-esquerda {
+	grid-column: imagem-grande-esquerda;
+	background: url("../../images/corte2.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	box-shadow: 2px 2px 2px 15px #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.tabela_imagens-esquerda tr td {
+	padding-left: 30px;
+	padding-top: 30px;
+	padding-bottom: 10px;
+}
+
+.tabela_imagens-direita {
+	margin-left: 15%;
+}
+
+.tabela_imagens-direita tr td {
+	padding-left: 30px;
+	padding-top: 30px;
+	padding-bottom: 10px;
+}
+
+h1 {
+	font-family: 'Bebas Neue', cursive;
+	font-size: 38pt;
+	text-align: center;
+	text-shadow: 2px 2px 5px #000;
+	letter-spacing: 2px;
+}
+
+h3 {
+	font-family: 'Bebas Neue', cursive;
+	text-shadow: 2px 2px 5px #000;
+	letter-spacing: 2px;
+}
+
+.h3-barbas {
+	text-shadow: 2px 2px 5px #fff;
+}
+
+.imagem-corte {
+	width: 200px;
+	border: 2px solid #000;
+	animation: showCirculos .5s forwards;
+}
+
+.imagem-corte.marcada {
+	width: 250px;
+	position: absolute;
+	z-index: 2;
+	-webkit-transition: all 0.75s ease 0s;
+	-moz-transition: all 0.75s ease 0s;
+	-o-transition: all 0.75s ease 0s;
+	transition: all 0.75s ease 0s;
+}
+
+.tabela_imagens-esquerda .imagem-corte.marcada {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* ------------------------------------------------ */
+
+.lista-servicos {
+	padding: 50px;
+}
+
+.lista_cortes_barbas {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: "cortes barbas";
+}
+
+.cortes {
+	grid-column: cortes;
+	background: #333;
+	padding: 20px;
+	box-shadow: 1px 1px 4px #000, inset 0 0 1em #222;
+}
+
+.barbas {
+	grid-column: barbas;
+	background: #eee;
+	padding: 20px;
+	color: #333;
+	box-shadow: 1px 1px 4px #ccc, inset 0 0 1em #ccc;
+}
+
+.cortes li, .barbas li{
+	list-style: none;
+	margin-bottom: 15px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 16pt;
+}
+
+.cortes strong, .barbas strong {
+	float: right;
+}
+
+/* ------------------------------------------------ */
+
+.secao-agendamento {
+	grid-template-columns: 1fr;
+	grid-template-areas: "div-agendar" "imagem-agendamento";
+	text-align: center;
+}
+
+.imagem-agendamento {
+	grid-column: imagem-agendamento;
+	background: url("../../images/fundo.png")center center;
+	background-size: 60%;
+	background-repeat: no-repeat;
+	padding: 250px;
+}
+
+.link-agendamento {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 1.25rem;
+	font-weight: bold;
+	letter-spacing: 2px;
+	color: #ddd;
+	border: 2px solid #fff;
+	border-radius: 4px;
+}
+
+.link-agendamento:hover {
+	text-decoration: none;
+	background: #ddd;
+	color: #333;
+	font-weight: bold;
+	-webkit-transition: all 0.75s ease 0s;
+	-moz-transition: all 0.75s ease 0s;
+	-o-transition: all 0.75s ease 0s;
+	transition: all 0.75s ease 0s;
+}
+
+/* ---------------------------------------------- */
+
+.secao-horarios {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: "info-atendimento imagem-atendimento";
+	margin-top: 5%;
+}
+
+.info-atendimento {
+	grid-column: info-atendimento;
+	background: #333;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	text-align: center;
+}
+
+.info-atendimento p {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 1.15rem;
+	letter-spacing: 1px;
+}
+
+.imagem-atendimento {
+	grid-column: imagem-atendimento;
+	background: url("../../images/fundo-horarios2.png")center center;
+	background-size: 100%;
+	padding: 200px;
+}
+
+.info-atendimento .horarios {
+	font-weight: bold;
+	font-family: 'Open Sans Condensed', sans-serif;
+	letter-spacing: 1px;
+}
+
+/* ---------------------------------------------- */
+
+.secao-formulario {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: "imagem-formulario formulario";
+	margin-top: 10%;
+}
+
+.imagem-formulario {
+	grid-column: imagem-formulario;
+	background: url("../../images/fundo-formulario.png")center center;
+	background-size: 100%;
+	padding: 200px;
+}
+
+.formulario {
+	grid-column: formulario;
+	background: #333;
+	text-align: center;
+	padding: 10px;
+}
+
+.formulario a {
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: #ddd;
+}
+
+.formulario a:hover {
+	text-decoration: none;
+}
+
+.formulario h3 {
+	margin-top: 30px;
+}
+
+.formulario p {
+	font-family: 'Open Sans Condensed', sans-serif;
+	line-height: 10px;
+}
+
+.formulario-inputs input {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: 8px;
+	width: 200px;
+	height: 35px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 1.15rem;
+	color: #ddd;
+	background: transparent;
+}
+
+.formulario-inputs textarea {
+	width: 420px;
+	height: 80px;
+	padding: 10px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: #ddd;
+	background: transparent;
+}
+
+.formulario-inputs input::placeholder, textarea::placeholder {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 1rem;
+	color: #ddd;
+} 
+
+.botao-enviar {
+	background: transparent;
+	border: 1px solid #ddd;
+	padding: 8px 20px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: #ddd;
+	letter-spacing: 2px;
+	margin-bottom: 20px;
+}
+
+.botao-enviar:hover {
+	background: #ddd;
+	color: #333;
+	-webkit-transition: all 0.75s ease 0s;
+	-moz-transition: all 0.75s ease 0s;
+	-o-transition: all 0.75s ease 0s;
+	transition: all 0.75s ease 0s;
+	cursor: pointer;
+}
+
+/* ---------------------------------------------- */
+
+.dados {
+	text-align: center;
+	margin: 0 auto;
+	border: 1px solid #000; 
+}
+
+.dados td {
+	padding: 10px;
+}
+
+.topicos {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: bold;
+	letter-spacing: 1px;
+	background: #333;
+	color: #fff;
+}
+
+.informacoes {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 1rem;
+}
+
+/* ---------------------------------------------- */
+
+footer {
+	background: linear-gradient(to right, #111, #333);
+	margin-top: 30px;
+	padding: 15px;
+}
+
+footer p {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 1rem;
+	text-align: center;
+	letter-spacing: 1px;
+}
+
+footer p a {
+	color: #ddd;
+}
+
+footer p a:hover {
+	text-decoration: none;
+}
+
+footer p a:hover, .menu a:hover {
+	color: #fff;
+}
+
+footer p span {
+	font-weight: bold;
+}
+
+/* ---------------------------------------------- */
+
+@keyframes showWhats {
+	from {
+		right: 15px;
+	}
+	to {
+		right: 25px;
+	}
+}
+
+@keyframes showMenu {
+	from {
+		opacity: 0;
+		transform: translate3D(0, -30px, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3D(0, 0, 0);
+	}
+}
+
+@keyframes showCirculos {
+	from {
+		opacity: 0;
+		transform: translate3D(-30px, 0, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3D(0, 0, 0);
+	}
+}
+
+/* ---------------------------------------------- */
+
+@media(max-width: 1150px) {
+	.menu .item-menu {
+		display: inline;
+	}
+
+	.menu.ativado {
+		padding: 50px;
+		-webkit-transition: all 0.75s ease 0s;
+		-moz-transition: all 0.75s ease 0s;
+		-o-transition: all 0.75s ease 0s;
+		transition: all 0.75s ease 0s;
+	}
+	
+	.menu.desativado {
+		padding: 10px;
+		background: linear-gradient(to right, #111, #333);
+		-webkit-transition: all 0.75s ease 0s;
+		-moz-transition: all 0.75s ease 0s;
+		-o-transition: all 0.75s ease 0s;
+		transition: all 0.75s ease 0s;
+	}
+
+	.svg-whats {
+		width: 40px;
+		top: 560px;
+	}
+	
+	.tabela_imagens-esquerda tr td {
+		padding-left: 0px;
+		padding-right: 10px;
+		padding-top: 30px;
+		padding-bottom: 10px;
+	}
+	
+	.tabela_imagens-direita tr td {
+		padding-left: 10px;
+		padding-top: 30px;
+		padding-bottom: 10px;
+	}
+	
+	.tabela_imagens-direita {
+		text-align: center;
+		margin: 0 auto;
+	}
+}
+
+/* ---------------------------------------------- */
+
+@media(max-width: 1020px) {
+	.container {
+		display: block
+	}
+	
+	.menu .item-menu{
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 10px;
+	}
+	
+	.menu .item-numero {
+		display: none;
+	}
+
+	.menu.ativado {
+		padding: 4px;
+	}
+	
+	.menu.desativado {
+		padding: 0px;
+	}
+	
+	.svg-whats {
+		width: 40px;
+		top: 560px;
+	}
+	
+	.primeiro-grid {
+		display: block;
+	}
+	
+	.segundo-grid {
+		display: block;
+	}
+	
+	.imagem-grande-direita, .imagem-grande-esquerda {
+		background-size: 100%;
+		padding: 100px;
+	}
+
+	.tabela_imagens-esquerda, .tabela_imagens-esquerda {
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.imagem-grande-direita, .imagem-grande-esquerda {
+		box-shadow: 0px 0px 0px;
+		border: 2px solid #000;
+	}
+
+	.lista_cortes_barbas {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-areas: "cortes" "barbas";
+	}
+	
+	.imagem-agendamento {
+		background-size: 100%;
+		padding: 250px;
+	}
+	
+	.secao-horarios {
+		grid-template-columns: 1fr;
+		grid-template-areas: "info-atendimento" "imagem-atendimento";
+	}
+	
+	.info-atendimento {
+		padding: 20px;
+	}
+	
+	.br {
+		display: none;
+	}
+
+	.secao-formulario {
+		grid-template-columns: 1fr;
+		grid-template-areas: "imagem-formulario" "formulario";
+		margin-top: 10%;
+	}
+}
+
+/* ------------------------------------------------------------------------------------ */

@@ -1,0 +1,247 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	background: #444;
+	color: #fff;
+	font-family: Arial;
+}
+
+.menu {
+	grid-column: menu;
+	background: linear-gradient(to right, #111, #333);
+	animation: showMenu .5s forwards;
+	border-bottom: 2px solid #000;
+}
+
+.menu a {
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-decoration: none;
+	color: #ddd;
+	font-size: 0.85rem;
+	letter-spacing: 2px;
+}
+
+.menu.ativado {
+	padding: 50px;
+	-webkit-transition: all 0.75s ease 0s;
+	-moz-transition: all 0.75s ease 0s;
+	-o-transition: all 0.75s ease 0s;
+	transition: all 0.75s ease 0s;
+}
+
+.menu.desativado {
+	padding: 0px;
+	background: linear-gradient(to right, #111, #333);
+	-webkit-transition: all 0.75s ease 0s;
+	-moz-transition: all 0.75s ease 0s;
+	-o-transition: all 0.75s ease 0s;
+	transition: all 0.75s ease 0s;
+}
+
+
+.span-contatos {
+	float: right;
+	font-weight: bold;
+}
+
+/* Mudar o TOP do SVG-WHATS só no Mozilla */
+@-moz-document url-prefix() {
+    body .svg-whats {
+        top: 560px;
+    }
+}
+
+.svg-whats {
+	top: 590px;
+	z-index: 2;
+	position: fixed;
+	width: 50px;
+	animation: showWhats .5s ease-in 0s infinite alternate;
+}
+
+h1 {
+	font-family: 'Bebas Neue', cursive;
+	font-size: 38pt;
+	text-align: center;
+	text-shadow: 2px 2px 5px #000;
+	letter-spacing: 2px;
+	margin-top: 125px;
+}
+
+h3 {
+	font-family: 'Bebas Neue', cursive;
+	text-shadow: 2px 2px 5px #000;
+	letter-spacing: 2px;
+}
+
+.tabela-imagens {
+	margin: 0 auto;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.primeira_colunas-fotos, .segunda_colunas-fotos, .terceira_colunas-fotos {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	animation: showImagens .5s forwards;
+}
+
+.primeira_colunas-fotos img, .segunda_colunas-fotos img, .terceira_colunas-fotos img {
+	box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.tabela-imagens td {
+	padding: 20px;
+}
+
+.botao-carregar {
+	background: transparent;
+	border: 1px solid #ddd;
+	padding: 10px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: #ddd;
+	letter-spacing: 2px;
+	cursor: pointer;
+}
+
+.div-botao {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.botao-carregar:hover {
+	background: #ddd;
+	color: #333;
+	-webkit-transition: all 0.75s ease 0s;
+	-moz-transition: all 0.75s ease 0s;
+	-o-transition: all 0.75s ease 0s;
+	transition: all 0.75s ease 0s;
+}
+
+#esconder {
+	font-family: 'Open Sans Condensed', sans-serif;
+	letter-spacing: 2px;
+	margin-top: 20px;
+	display: none;
+}
+
+.seta {
+	animation: showSeta .5s ease-in 0s infinite alternate;
+}
+
+/* ---------------------------------------------- */
+
+footer {
+	background: linear-gradient(to right, #111, #333);
+	margin-top: 60px;
+	padding: 20px;
+}
+
+footer p {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 1rem;
+	text-align: center;
+	letter-spacing: 1px;
+}
+
+footer p a {
+	color: #ddd;
+}
+
+footer p a:hover {
+	text-decoration: none;
+}
+
+footer p a:hover, .menu a:hover {
+	color: #fff;
+}
+
+footer p span {
+	font-weight: bold;
+}
+
+/* ---------------------------------------------- */
+
+@keyframes showWhats {
+	from {
+		right: 10px;
+	}
+	to {
+		right: 20px;
+	}
+}
+
+@keyframes showMenu {
+	from {
+		opacity: 0;
+		transform: translate3D(0, -30px, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3D(0, 0, 0);
+	}
+}
+
+@keyframes showImagens {
+	from {
+		opacity: 0;
+		transform: translate3D(-30px, 0, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3D(0, 0, 0);
+	}
+}
+
+@keyframes showSeta {
+	from {
+		opacity: 0;
+		transform: translate3d(0px, -30px, 0px);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0px, 0px, 0px);
+	}
+}
+
+/* ---------------------------------------------- */
+
+@media(max-width: 1020px) {
+	.menu .item-menu{
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 10px;
+	}
+	
+	.span-contatos {
+		float: left;
+		display: block;
+	}
+
+	#hifen {
+		display: none;
+	}
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+@media(max-width: 1080px) {
+	.menu .item-menu {
+		display: inline;
+	}
+	
+	.primeira_colunas-fotos img, .segunda_colunas-fotos img, .terceira_colunas-fotos img {
+		width: 150px;
+	}
+
+	.svg-whats {
+		top: 560px;
+	}
+}
